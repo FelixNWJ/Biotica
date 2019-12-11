@@ -8,7 +8,7 @@ public class PlayerCollider : MonoBehaviour
     public PlayerMovement playerMovement;
 
     private GameManager gameManager;
-
+    
     
     void Start() {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
