@@ -68,3 +68,9 @@ crashlytics-build.properties
 
 
 # End of https://www.gitignore.io/api/unity
+Assets/Scripts/White_Blood_Cell_Movement.cs.meta
+Assets/Sprites/White_Blood_Cell.png.meta
+Assets/Sprites/White_Blood_Cell.xcf.meta
+Assets/Prefabs/White_Blood_Cell.prefab.meta
+Assets/Animations/White_Blood_Cell.controller.meta
+Assets/Animations/White_Blood_Cell_Default.anim.meta
