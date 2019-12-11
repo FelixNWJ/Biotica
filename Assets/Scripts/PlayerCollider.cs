@@ -30,6 +30,11 @@ public class PlayerCollider : MonoBehaviour
             gameManager.increaseWhiteBloodCellScore();
         }
 
+        if (other.gameObject.tag == "PowerUp") {
+            StartCoroutine(other.GetComponent<PowerUp>().executePowerUp());
+            Destroy(other.gameObject);
+        }
+
     }
 
 }
