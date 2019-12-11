@@ -377,7 +377,7 @@ MonoBehaviour:
   backgroundToMoveSecond: {fileID: 819053985}
   germToSpawn: {fileID: 8332904844835937108, guid: 231020b2e25e3404a91e552f504fa12b,
     type: 3}
-  timeToSpawn: 3
+  timeBetweenSpawningGerms: 3
 --- !u!1001 &2021305695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,6 +523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852266055288278064, guid: da2156bd79472cf43b94c7cfa4dcc113,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da2156bd79472cf43b94c7cfa4dcc113, type: 3}
