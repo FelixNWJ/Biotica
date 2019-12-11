@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &979013312876209725
 MonoBehaviour:
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea7cbc351e67104ebcb5290f8c38cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 979013312876209723}
 --- !u!95 &979013312876209727
 Animator:
   serializedVersion: 3
