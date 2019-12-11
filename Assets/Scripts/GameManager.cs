@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     private GameObject player;
 
+    public int scoreMultiplier = 1;
+
     private Text whiteBloodCellScoreUI;
     private float whiteBloodCellScore = 0;
 
@@ -35,6 +37,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void increaseWhiteBloodCellScore() {
-        whiteBloodCellScore++;
+        whiteBloodCellScore += 1 * scoreMultiplier;
     }
 }
