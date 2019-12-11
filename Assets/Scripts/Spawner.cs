@@ -14,10 +14,17 @@ public class Spawner : MonoBehaviour
     public float timeBetweenSpawningGerms;
     private float timeLeftToSpawnGerms;
 
+    public GameObject collectibleToSpawn;
+
+    public float timeBetweenSpawningCollectibles;
+    private float timeLeftToSpawnCollectibles;
+
     // Start is called before the first frame update
     void Start()
     {
         timeLeftToSpawnGerms = timeBetweenSpawningGerms;
+
+        timeLeftToSpawnCollectibles = timeBetweenSpawningCollectibles;
     }
 
     // Update is called once per frame
@@ -40,6 +47,24 @@ public class Spawner : MonoBehaviour
             timeLeftToSpawnGerms -= Time.deltaTime;
 
         }
+
+        if(timeLeftToSpawnCollectibles <= 0) {
+            //Spawn Collectible
+            float yCoordinateOfCollectible = Random.Range(-10, 11);
+            Vector3 positionOfCollectibleToSpawn = new Vector3(transform.position.x, yCoordinateOfCollectible, 0);
+            Instantiate(collectibleToSpawn, positionOfCollectibleToSpawn, transform.rotation);
+
+
+            //Reset Timer
+            timeLeftToSpawnCollectibles = timeBetweenSpawningCollectibles;
+
+        } else {
+
+            //Reduce Timer
+            timeLeftToSpawnCollectibles -= Time.deltaTime;
+
+        }
+
     }
 
     void FixedUpdate() {
@@ -52,6 +77,6 @@ public class Spawner : MonoBehaviour
             backgroundToMoveNext = backgroundToMoveSecond;
             backgroundToMoveSecond = temp;
         }
-        
+
     }
 }
