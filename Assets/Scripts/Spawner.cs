@@ -23,15 +23,6 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
-        if(backgroundToMoveNext.transform.position.x <= -87) {
-
-            backgroundToMoveNext.transform.position = new Vector3(143, backgroundToMoveNext.transform.position.y, 0);
-
-            GameObject temp = backgroundToMoveNext;
-            backgroundToMoveNext = backgroundToMoveSecond;
-            backgroundToMoveSecond = temp;
-        }
 
         if(timeLeftToSpawnGerms <= 0) {
             //Spawn Germ
@@ -49,5 +40,18 @@ public class Spawner : MonoBehaviour
             timeLeftToSpawnGerms -= Time.deltaTime;
 
         }
+    }
+
+    void FixedUpdate() {
+
+        if(backgroundToMoveNext.transform.position.x <= -87) {
+
+            backgroundToMoveNext.transform.position = new Vector3(143, backgroundToMoveNext.transform.position.y, 0);
+
+            GameObject temp = backgroundToMoveNext;
+            backgroundToMoveNext = backgroundToMoveSecond;
+            backgroundToMoveSecond = temp;
+        }
+        
     }
 }
