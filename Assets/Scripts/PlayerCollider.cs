@@ -7,7 +7,13 @@ public class PlayerCollider : MonoBehaviour
 
     public PlayerMovement playerMovement;
 
+    private GameManager gameManager;
+
     
+    void Start() {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
     void OnTriggerEnter2D (Collider2D other) {
 
         if (other.gameObject.tag == "Enemy") {
@@ -16,6 +22,12 @@ public class PlayerCollider : MonoBehaviour
 
         if (other.gameObject.tag == "Background") {
             Debug.Log("Background hit");
+        }
+
+        if (other.gameObject.tag == "Collectible") {
+            Destroy(other.gameObject);
+            Debug.Log("Collectible collided");
+            gameManager.increaseWhiteBloodCellScore();
         }
 
     }
