@@ -19,12 +19,19 @@ public class Spawner : MonoBehaviour
     public float timeBetweenSpawningCollectibles;
     private float timeLeftToSpawnCollectibles;
 
+    public GameObject powerUpToSpawn;
+
+    public float timeBetweenSpawningPowerUps;
+    private float timeLeftToSpawnPowerUps;
+
     // Start is called before the first frame update
     void Start()
     {
         timeLeftToSpawnGerms = timeBetweenSpawningGerms;
 
         timeLeftToSpawnCollectibles = timeBetweenSpawningCollectibles;
+
+        timeLeftToSpawnPowerUps = timeBetweenSpawningPowerUps;
     }
 
     // Update is called once per frame
@@ -62,6 +69,23 @@ public class Spawner : MonoBehaviour
 
             //Reduce Timer
             timeLeftToSpawnCollectibles -= Time.deltaTime;
+
+        }
+
+        if(timeLeftToSpawnPowerUps <= 0) {
+            //Spawn Collectible
+            float yCoordinateOfPowerUp = Random.Range(-10, 11);
+            Vector3 positionOfPowerUpToSpawn = new Vector3(transform.position.x, yCoordinateOfPowerUp, 0);
+            Instantiate(powerUpToSpawn, positionOfPowerUpToSpawn, transform.rotation);
+
+
+            //Reset Timer
+            timeLeftToSpawnPowerUps = timeBetweenSpawningPowerUps;
+
+        } else {
+
+            //Reduce Timer
+            timeLeftToSpawnPowerUps -= Time.deltaTime;
 
         }
 
