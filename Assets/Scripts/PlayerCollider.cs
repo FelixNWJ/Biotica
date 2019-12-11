@@ -10,8 +10,12 @@ public class PlayerCollider : MonoBehaviour
     
     void OnTriggerEnter2D (Collider2D other) {
 
-        if (other.gameObject.tag == "Obstacle") {
+        if (other.gameObject.tag == "Enemy") {
             playerMovement.enabled = false;
+        }
+
+        if (other.gameObject.tag == "Background") {
+            Debug.Log("Background hit");
         }
 
     }
