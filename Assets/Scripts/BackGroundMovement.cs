@@ -11,8 +11,8 @@ public class BackGroundMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * 10f;
+        transform.position += new Vector3(-1, 0, 0) * Time.fixedDeltaTime * 10f;
     }
 }

@@ -14,7 +14,7 @@ public class GermMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.position += new Vector3(-1, 0, 0) * Time.deltaTime * moveSpeed;
     }
