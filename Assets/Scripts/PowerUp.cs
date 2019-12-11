@@ -14,7 +14,7 @@ public abstract class PowerUp : MonoBehaviour
 
     public abstract void reversePowerUp(GameManager gameManager);
 
-    void onBecameInvisible() {
+    void OnBecameInvisible() {
         Destroy(gameObject);
     }
 
