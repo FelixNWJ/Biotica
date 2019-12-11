@@ -74,3 +74,11 @@ Assets/Sprites/White_Blood_Cell.xcf.meta
 Assets/Prefabs/White_Blood_Cell.prefab.meta
 Assets/Animations/White_Blood_Cell.controller.meta
 Assets/Animations/White_Blood_Cell_Default.anim.meta
+Assets/Sprites/Power_Up_Bubble_Container.xcf.meta
+Assets/Sprites/Power_Up_Double_Score_Icon.png.meta
+Assets/Sprites/Power_Up_Double_Score_Icon.xcf.meta
+Assets/Scripts/PowerUp.cs.meta
+Assets/Scripts/PowerUpDoubleScore.cs.meta
+Assets/Sprites/Power_Up_Bubble_Container.png.meta
+Assets/Prefabs/Power_Up.prefab.meta
+Assets/Prefabs/Power_Up_Double_Score.prefab.meta
