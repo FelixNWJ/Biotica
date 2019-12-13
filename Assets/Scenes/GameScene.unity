@@ -609,23 +609,27 @@ MonoBehaviour:
   sounds:
   - name: GermDeath
     soundClip: {fileID: 8300000, guid: 1f30ec5d880d8b247bd50c06560cc065, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
+    isLoop: 0
     source: {fileID: 0}
   - name: WhiteBloodCellCollected
     soundClip: {fileID: 8300000, guid: 1f30ec5d880d8b247bd50c06560cc065, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
+    isLoop: 0
     source: {fileID: 0}
   - name: PowerUpCollected
     soundClip: {fileID: 8300000, guid: 1f30ec5d880d8b247bd50c06560cc065, type: 3}
-    volume: 50
+    volume: 0.8
     pitch: 1
+    isLoop: 0
     source: {fileID: 0}
   - name: BackgroundMusic
     soundClip: {fileID: 8300000, guid: fbf53ba12dde7174fba7fe58187ef4a4, type: 3}
-    volume: 0
+    volume: 0.3
     pitch: 1
+    isLoop: 1
     source: {fileID: 0}
 --- !u!1 &1146843059
 GameObject:
