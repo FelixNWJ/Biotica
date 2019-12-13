@@ -83,3 +83,9 @@ Assets/Sprites/Power_Up_Bubble_Container.png.meta
 Assets/Prefabs/Power_Up.prefab.meta
 Assets/Prefabs/Power_Up_Double_Score.prefab.meta
 Assets/Scripts/White_Blood_Cell_Manager.cs.meta
+Assets/Audios.meta
+Assets/Audios/BackgroundMusic.ceol.meta
+Assets/Audios/BackgroundMusic.wav.meta
+Assets/Audios/Pop.wav.meta
+Assets/Scripts/AudioManager.cs.meta
+Assets/Scripts/Sound.cs.meta
