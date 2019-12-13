@@ -33,10 +33,18 @@ public class GameManager : MonoBehaviour
         whiteBloodCellScoreUI.text = "WBC: " + whiteBloodCellScore.ToString();
 
         distance += Time.deltaTime;
-        distanceUI.text = "Distance: " + distance.ToString();
+        distanceUI.text = "Distance: " + ( (int)distance ).ToString();
     }
 
     public void increaseWhiteBloodCellScore() {
         whiteBloodCellScore += 1 * scoreMultiplier;
+    }
+
+    public float getWhiteBloodCellScore() {
+        return whiteBloodCellScore;
+    }
+
+    public int getDistance() {
+        return ((int)distance);
     }
 }
