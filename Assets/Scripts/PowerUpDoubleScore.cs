@@ -8,6 +8,7 @@ public class PowerUpDoubleScore : PowerUp
     public override IEnumerator executePowerUp() {
 
         GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         gameManager.scoreMultiplier = 2;
 
         yield return new WaitForSeconds(10);

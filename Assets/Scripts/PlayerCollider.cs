@@ -9,9 +9,11 @@ public class PlayerCollider : MonoBehaviour
 
     private GameManager gameManager;
     
+    private AudioManager audioManager;
     
     void Start() {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        audioManager = gameManager.GetComponentInChildren<AudioManager>();
     }
 
     void OnTriggerEnter2D (Collider2D other) {
@@ -26,11 +28,13 @@ public class PlayerCollider : MonoBehaviour
 
         if (other.gameObject.tag == "Collectible") {
             Destroy(other.gameObject);
+            audioManager.Play("WhiteBloodCellCollected");
             Debug.Log("Collectible collided");
             gameManager.increaseWhiteBloodCellScore();
         }
 
         if (other.gameObject.tag == "PowerUp") {
+            audioManager.Play("PowerUpCollected");
             StartCoroutine(other.GetComponent<PowerUp>().executePowerUp());
             Destroy(other.gameObject);
         }
