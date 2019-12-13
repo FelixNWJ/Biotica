@@ -89,3 +89,4 @@ Assets/Audios/BackgroundMusic.wav.meta
 Assets/Audios/Pop.wav.meta
 Assets/Scripts/AudioManager.cs.meta
 Assets/Scripts/Sound.cs.meta
+*.meta
