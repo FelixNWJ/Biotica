@@ -31,7 +31,12 @@ public static class SaveSystem
 
             BinaryFormatter formatter = new BinaryFormatter();
 
-            return formatter.Deserialize(stream) as GameData;
+            GameData dataLoaded = formatter.Deserialize(stream) as GameData;
+
+            stream.Close();
+
+            return dataLoaded;
+
 
         } catch (FileNotFoundException e) {
 

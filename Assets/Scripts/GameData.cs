@@ -2,16 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+[System.Serializable]
+public class GameData 
 {
     
-    float collectibleHighScore;
+    private int collectibleHighScore;
 
-    int distanceHighScore;
+    private int distanceHighScore;
 
     public GameData(GameManager game) {
-        this.collectibleHighScore = game.getWhiteBloodCellScore();
-        this.distanceHighScore = game.getDistance();
+        this.collectibleHighScore = GameManager.getWhiteBloodCellHighScore();
+        this.distanceHighScore = GameManager.getDistanceHighScore();
+    }
+
+    public int getCollectibleHighScore() {
+        return collectibleHighScore;
+    }
+
+    public int getDistanceHighScore() {
+        return distanceHighScore;
     }
 
 }
