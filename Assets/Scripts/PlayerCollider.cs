@@ -20,6 +20,12 @@ public class PlayerCollider : MonoBehaviour
     void OnTriggerEnter2D (Collider2D other) {
 
         if (other.gameObject.tag == "Enemy") {
+            int whiteBloodCellScore = GameObject.FindObjectOfType<White_Blood_Cell_Score>().getWhiteBloodCellScore();
+            int distanceScore = GameObject.FindObjectOfType<Distance_Score>().getDistanceScore();
+
+            gameManager.updateScore(whiteBloodCellScore, distanceScore);
+
+            SaveSystem.SaveScore(gameManager);
             SceneManager.LoadScene("StartMenu");
         }
 
@@ -31,7 +37,7 @@ public class PlayerCollider : MonoBehaviour
             Destroy(other.gameObject);
             audioManager.Play("WhiteBloodCellCollected");
             Debug.Log("Collectible collided");
-            gameManager.increaseWhiteBloodCellScore();
+            GameObject.FindObjectOfType<White_Blood_Cell_Score>().increaseWhiteBloodCellScore();
         }
 
         if (other.gameObject.tag == "PowerUp") {
