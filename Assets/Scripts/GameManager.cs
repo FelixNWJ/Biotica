@@ -77,4 +77,13 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void resetScore() {
+        distanceHighScore = 0;
+        whiteBloodCellHighScore = 0;
+        
+        GameObject.Find("DistanceHighScoreText").GetComponent<Distance_High_Score>().updateHighScoreText();
+        GameObject.Find("WhiteBloodCellHighScoreText").GetComponent<White_Blood_Cell_High_Score>().updateHighScoreText();
+
+    }
+
 }
