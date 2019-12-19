@@ -18,4 +18,9 @@ public class Distance_High_Score : MonoBehaviour
     {
         distanceHighScore = GameManager.getDistanceHighScore();
     }
+
+    public void updateHighScoreText() {
+        updateHighScore();
+        gameObject.GetComponent<TextMeshProUGUI>().text = "Distance: " + distanceHighScore;
+    }
 }

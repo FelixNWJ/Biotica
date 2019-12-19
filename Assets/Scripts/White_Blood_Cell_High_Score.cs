@@ -20,5 +20,10 @@ public class White_Blood_Cell_High_Score : MonoBehaviour
         whiteBloodCellHighScore = GameManager.getWhiteBloodCellHighScore();
     }
 
+    public void updateHighScoreText() {
+        updateHighScore();
+        gameObject.GetComponent<TextMeshProUGUI>().text = "WBC: " + whiteBloodCellHighScore;
+    }
+
 }    
     
