@@ -60,6 +60,13 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame() {
 
+        int whiteBloodCellScore = GameObject.FindObjectOfType<White_Blood_Cell_Score>().getWhiteBloodCellScore();
+        int distanceScore = GameObject.FindObjectOfType<Distance_Score>().getDistanceScore();
+
+        GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager.updateScore(whiteBloodCellScore, distanceScore);
+        SaveSystem.SaveScore(gameManager);
+
         Application.Quit();
 
     }
