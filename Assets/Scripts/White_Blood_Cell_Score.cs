@@ -11,13 +11,13 @@ public class White_Blood_Cell_Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Text>().text = "WBC: " + whiteBloodCellScore;
+        gameObject.GetComponent<Text>().text = ": " + whiteBloodCellScore;
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<Text>().text = "WBC: " + whiteBloodCellScore;
+        gameObject.GetComponent<Text>().text = ": " + whiteBloodCellScore;
     }
 
     public void increaseWhiteBloodCellScore() {

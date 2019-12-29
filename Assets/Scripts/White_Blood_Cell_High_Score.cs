@@ -11,7 +11,7 @@ public class White_Blood_Cell_High_Score : MonoBehaviour
     void OnEnable()
     {
         whiteBloodCellHighScore = GameManager.getWhiteBloodCellHighScore();
-        gameObject.GetComponent<TextMeshProUGUI>().text = "WBC: " + whiteBloodCellHighScore;
+        gameObject.GetComponent<TextMeshProUGUI>().text = ": " + whiteBloodCellHighScore;
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class White_Blood_Cell_High_Score : MonoBehaviour
 
     public void updateHighScoreText() {
         updateHighScore();
-        gameObject.GetComponent<TextMeshProUGUI>().text = "WBC: " + whiteBloodCellHighScore;
+        gameObject.GetComponent<TextMeshProUGUI>().text = ": " + whiteBloodCellHighScore;
     }
 
 }    
