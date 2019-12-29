@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -13,11 +14,13 @@ public class Spawner : MonoBehaviour
 
     public float timeBetweenSpawningGerms;
     private float timeLeftToSpawnGerms;
+    private float minimumTimeBetweenSpawningGerms = 1.5f;
 
     public GameObject collectibleToSpawn;
 
     public float timeBetweenSpawningCollectibles;
     private float timeLeftToSpawnCollectibles;
+    private float maximumTimeBetweenSpawningCollectibles = 5f;
 
     public GameObject powerUpToSpawn;
 
@@ -27,6 +30,9 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        System.Diagnostics.Debug.Assert(timeBetweenSpawningGerms >= minimumTimeBetweenSpawningGerms);
+        System.Diagnostics.Debug.Assert(timeBetweenSpawningCollectibles <= maximumTimeBetweenSpawningCollectibles);
+
         timeLeftToSpawnGerms = timeBetweenSpawningGerms;
 
         timeLeftToSpawnCollectibles = timeBetweenSpawningCollectibles;
@@ -44,6 +50,9 @@ public class Spawner : MonoBehaviour
             Vector3 positionOfGermToSpawn = new Vector3(transform.position.x, yCoordinateOfGerm, 0);
             Instantiate(germToSpawn, positionOfGermToSpawn, transform.rotation);
 
+            //Increase rate of spawning Germs by decreasing spawn time interval
+            timeBetweenSpawningGerms -= Random.Range(0.1f, 0.3f);
+            timeBetweenSpawningGerms = Mathf.Max(timeBetweenSpawningGerms, minimumTimeBetweenSpawningGerms);
 
             //Reset Timer
             timeLeftToSpawnGerms = timeBetweenSpawningGerms;
@@ -61,6 +70,10 @@ public class Spawner : MonoBehaviour
             Vector3 positionOfCollectibleToSpawn = new Vector3(transform.position.x, yCoordinateOfCollectible, 0);
             Instantiate(collectibleToSpawn, positionOfCollectibleToSpawn, transform.rotation);
 
+
+            //Decrease rate of Spawning Collectibles by increasing spawn time interval
+            timeBetweenSpawningCollectibles += Random.Range(0.1f, 0.3f);
+            timeBetweenSpawningCollectibles = Mathf.Min(timeBetweenSpawningCollectibles, maximumTimeBetweenSpawningCollectibles);
 
             //Reset Timer
             timeLeftToSpawnCollectibles = timeBetweenSpawningCollectibles;

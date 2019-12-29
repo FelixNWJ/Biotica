@@ -1512,7 +1512,7 @@ MonoBehaviour:
   timeBetweenSpawningGerms: 3
   collectibleToSpawn: {fileID: 4263556110027410615, guid: 51c3805ab4d8e0645bb6f8eda079ec22,
     type: 3}
-  timeBetweenSpawningCollectibles: 5
+  timeBetweenSpawningCollectibles: 3
   powerUpToSpawn: {fileID: 1585548142275802225, guid: 0dae91d686482ba4d9988eab98f112e2,
     type: 3}
   timeBetweenSpawningPowerUps: 6
