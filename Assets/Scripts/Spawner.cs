@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
 
     public float timeBetweenSpawningGerms;
     private float timeLeftToSpawnGerms;
-    private float minimumTimeBetweenSpawningGerms = 1.5f;
+    private float minimumTimeBetweenSpawningGerms = 1f;
 
     public GameObject collectibleToSpawn;
 
@@ -45,10 +45,14 @@ public class Spawner : MonoBehaviour
     {
 
         if(timeLeftToSpawnGerms <= 0) {
-            //Spawn Germ
-            float yCoordinateOfGerm = Random.Range(-10, 11);
-            Vector3 positionOfGermToSpawn = new Vector3(transform.position.x, yCoordinateOfGerm, 0);
-            Instantiate(germToSpawn, positionOfGermToSpawn, transform.rotation);
+            //Spawn Germs
+            int numberOfGermsToSpawn = Random.Range(1, 4);
+
+            for (int i = 0; i < numberOfGermsToSpawn; i++) {
+                float yCoordinateOfGerm = Random.Range(-10, 11);
+                Vector3 positionOfGermToSpawn = new Vector3(transform.position.x, yCoordinateOfGerm, 0);
+                Instantiate(germToSpawn, positionOfGermToSpawn, transform.rotation);
+            }
 
             //Increase rate of spawning Germs by decreasing spawn time interval
             timeBetweenSpawningGerms -= Random.Range(0.1f, 0.3f);
